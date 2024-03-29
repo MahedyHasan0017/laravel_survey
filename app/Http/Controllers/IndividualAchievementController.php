@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class IndividualAchievementController extends Controller
 {
     public function index(){
-        return "home"; 
+        return view('survey.individual_achievement');
     }
 }

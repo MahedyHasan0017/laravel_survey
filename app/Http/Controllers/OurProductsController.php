@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class OurProductsController extends Controller
 {
     public function index(){
-        return "home"; 
+        return view('survey.our_products');
     }
 }

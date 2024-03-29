@@ -1,0 +1,43 @@
+.footer__main {
+    background: var(--blue);
+    padding: 50px 0;
+}
+
+.footer__box {
+    /* background: var(--dimmedGray); */
+    margin: 9px 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.footer__brand {
+    color: var(--white);
+    font-size: var(--heading2);
+    text-transform: capitalize;
+}
+.footer__box{
+    color : var(--white)
+}
+.footer__box p {
+    color: var(--dimmedGray);
+    font-size: var(--heading5);
+    margin-top: 20px;
+}
+
+.footer__box__heading{
+    font-size: var(--heading3);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.footer__box__list{
+    font-size: var(--heading5);
+}
+.footer__box__list li{
+    margin-top: 10px ;
+}
+.footer__box__list li span.icon{
+    color : var(--yellow);
+    font-size: var(--heading3);
+    margin-right: 5px ;
+}

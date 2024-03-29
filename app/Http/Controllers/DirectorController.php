@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class DirectorController extends Controller
 {
     public function index(){
-        return "home"; 
+        return view('survey.director_panel');
     }
 }

@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class TeamMemberController extends Controller
 {
     public function index(){
-        return "home"; 
+        return view('survey.team_member');
     }
 }

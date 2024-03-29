@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function index(){
-        return "home"; 
+        return view('survey.contact_us');
     }
 }
