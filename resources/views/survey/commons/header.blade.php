@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dishari Survey Co. Pvt. Ltd.</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,13 +23,35 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
 
+        .toast{
+            background-color: darkblue;
+        }
+
+        .toast-success {
+            background-color: #09162A !important;
+            color : #F59630 !important ; 
+            opacity: 1 !important;
+        }
+        .toast-error {
+            background-color: #09162A !important;
+            color : #F59630 !important ; 
+            opacity: 1 !important;
+        }
+        .toast-message{
+            color : #F59630 !important ; 
+        }
+       
+        .toast-message {
+            color: black;
+        }
     </style>
-
-
 </head>
+
+
 
 <body>
 
@@ -39,12 +63,13 @@
             <div class="col-md-7 logo__and__brand">
                 <div class="logo__main">
                     <a href="{{route('home_view')}}">
-                        <img src="{{asset('/assets/assets/logo-icon/logo.png')}}" alt="logo">
+                        <img src="{{url('upload/admin_images/'.$setting->logo)}}" alt="logo">
                     </a>
                 </div>
                 <h1 class="brand__name">
                     <a href="/">
-                        Dishari Survey Co. Pvt. Ltd.
+                        <!-- Dishari Survey Co. Pvt. Ltd. -->
+                        {{$setting->company_name}}
                     </a>
                 </h1>
             </div>
@@ -53,16 +78,16 @@
                     <div class="social__icons">
                         <ul>
                             <li class="social__single__item facebook__color">
-                                <a href="https://www.facebook.com/dssurvey/"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="{{$setting->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a>
                             </li>
                             <li class="social__single__item twitter__color">
-                                <a href="https://twitter.com/disharisurvey?s=08"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="{{$setting->twitter_url}}"><i class="fa-brands fa-twitter"></i></a>
                             </li>
                             <li class="social__single__item instragram__color">
-                                <a href="https://www.instagram.com/dishari_survey/"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="{{$setting->instagram_url}}"><i class="fa-brands fa-instagram"></i></a>
                             </li>
                             <li class="social__single__item youtube__color">
-                                <a href="https://www.youtube.com/channel/UCpiQH25Iatged_aY1_Kk6aA?app=desktop"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="{{$setting->youtube_url}}"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -73,7 +98,7 @@
                         <div class="contact__info">
                             <div>Call Us</div>
                             <div>
-                                +8801737328266
+                            {{$setting->active_phone_number}}
                             </div>
                         </div>
                     </div>

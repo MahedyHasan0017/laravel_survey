@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class EnlistedBankController extends Controller
 {
     public function index(){
-        return view('survey.enlisted_bank');
+        $sett = Setting::all() ; 
+
+        $setting = $sett[0] ; 
+        return view('survey.enlisted_bank', compact('setting'));
     }
 }

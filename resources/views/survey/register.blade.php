@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col-md-6 col-lg-4 mx-auto mt-5">
             <div>
-                <h3>Login</h3>
+                <h3>Register</h3>
             </div>
             <div>
-                <form action="" method="post">
+                <form action="{{route('admin_register_store')}}" method="post">
                     @csrf
 
                     <div class="form-group mt-2">

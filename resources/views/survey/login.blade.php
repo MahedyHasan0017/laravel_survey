@@ -11,7 +11,7 @@
                 <h3>Login</h3>
             </div>
             <div>
-                <form action="" method="post">
+                <form action="{{route('admin_login_store')}}" method="post">
                     @csrf
 
                     <div class="form-group mt-2">

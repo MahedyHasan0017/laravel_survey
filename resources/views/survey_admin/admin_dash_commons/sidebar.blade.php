@@ -18,7 +18,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2></h2>
+              <h2>{{$user->name}}</h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -31,12 +31,13 @@
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="">users list</a></li>
-                    <li><a href="">submitted homework</a></li>
-                    <li><a href="">accepted homework</a></li>
-                    <li><a href="">profile</a></li>
+                  <li><a href="{{route('admin_dashboard')}}">dashboard</a></li>
+                    <li><a href="{{route('admin_general_setting')}}">General Settings</a></li>
+                    <li><a href="{{route('admin_mission_and_vision')}}">Mission And Vission</a></li>
+                    <li><a href="{{route('admin_our_product')}}">Our Product</a></li>
                   </ul>
                 </li>
+                
               </ul>
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-home"></i> other <span class="fa fa-chevron-down"></span></a>
@@ -80,7 +81,7 @@
             <ul class=" navbar-right">
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                  <img src="{{asset('images/img.jpg')}}" alt="">John Doe
+                  <img src="{{asset('images/img.jpg')}}" alt="">{{$user->name}}
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -89,7 +90,7 @@
                     <span>Settings</span>
                   </a>
                     <a class="dropdown-item" href="javascript:;">Help</a>
-                  <a href="" class="dropdown-item" ><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <a href="{{route('admin_logout')}}" class="dropdown-item" ><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
 

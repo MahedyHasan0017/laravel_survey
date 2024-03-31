@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\GeneralSettingController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyAchievementController;
 use App\Http\Controllers\ContactController;
@@ -21,13 +22,28 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function(){
-    Route::get('/dashboard',[AdminController::class , 'index'])->name('admin_dashboard') ; 
+
+    Route::get('/dashboard',[AdminController::class , 'index'])->name('admin_dashboard')->middleware('admin') ; 
 
     Route::get('/login',[AdminController::class , 'login_view'])->name('admin_login_view') ; 
     Route::post('/login',[AdminController::class , 'login_store'])->name('admin_login_store') ; 
-
+    Route::get('/logout',[AdminController::class , 'logout'])->name('admin_logout') ; 
     Route::get('/register',[AdminController::class , 'register_view'])->name('admin_register_view') ; 
     Route::post('/register',[AdminController::class , 'register_store'])->name('admin_register_store') ; 
+
+
+    Route::get('/general-setting' , [GeneralSettingController::class , 'general'])->name('admin_general_setting');
+    Route::post('/general-setting/store' , [GeneralSettingController::class , 'general_store'])->name('admin_general_setting_store');
+
+
+    Route::get('/mission-and-vision' , [MissionAndVissionController::class , 'mission_and_vision'])->name('admin_mission_and_vision');
+    Route::post('/mission-and-vision/store' , [MissionAndVissionController::class , 'mission_and_vision_store'])->name('admin_mission_and_vision_store');
+
+
+    Route::get('/our-product' , [OurProductsController::class , 'our_product'])->name('admin_our_product');
+
+    
+
 });
 
 
@@ -35,8 +51,8 @@ Route::prefix('admin')->group(function(){
 // user routes 
 
 
-Route::prefix('/')->group(function(){
-    Route::get('/',[HomeController::class , 'index'])->name('home_view') ; 
+Route::prefix('')->group(function(){
+    Route::get('',[HomeController::class , 'index'])->name('home_view') ; 
 
     Route::get('/mission_and_vision',[MissionAndVissionController::class , 'index'])->name('mission_and_vision_view') ; 
     Route::get('/management',[ManagementController::class , 'index'])->name('management_view') ; 

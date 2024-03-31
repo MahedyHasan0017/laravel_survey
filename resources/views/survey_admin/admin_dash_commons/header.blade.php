@@ -29,5 +29,33 @@
 
   <!-- Custom Theme Style -->
   <link href="{{asset('build/css/custom.min.css')}}" rel="stylesheet">
+
+
+
+  <style>
+
+        .toast{
+            background-color: darkblue;
+        }
+
+        .toast-success {
+            background-color: #09162A !important;
+            color : #F59630 !important ; 
+            opacity: 1 !important;
+        }
+        .toast-error {
+            background-color: #09162A !important;
+            color : #F59630 !important ; 
+            opacity: 1 !important;
+        }
+        .toast-message{
+            color : #F59630 !important ; 
+        }
+       
+        .toast-message {
+            color: black;
+        }
+    </style>
+
 </head>
 <body class="nav-md">
